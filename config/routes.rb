@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
-  get '/hello', to: 'application#hello_world'
+  # User account creation
+  post '/signup', to: 'users#create'
+  # get '/me', to: 'users#show'
+
 
   get '*path',
     to: 'fallback#index',
