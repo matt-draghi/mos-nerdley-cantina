@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import '../styles/App.css'
+import '../styles/Header.css'
+import '../styles/Home.css'
 import Home from "./Home";
 import Header from "./Header";
+import Signup from "./Signup";
 
 function App() {
-  // const [count, setCount] = useState(0);
   const [signedIn, setSignedIn] = useState(false)
-  // useEffect(() => {
-  //   fetch("/hello")
-  //     .then((r) => r.json())
-  //     .then((data) => setCount(data.count));
-  // }, []);
+
   
   return (
     <BrowserRouter>
@@ -21,12 +19,12 @@ function App() {
         </header>
 
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home signedIn={signedIn}/>
           </Route>
           {/* set path for when user needs to signup */}
           <Route path="/signup">
-            {/* <Signup /> */}
+            <Signup />
           </Route>
           {/* set path for when user wishes to login */}
           <Route path="/login">

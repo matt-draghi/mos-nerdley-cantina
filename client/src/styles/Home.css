@@ -1,0 +1,35 @@
+.home-container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-container img{
+    width: auto;
+    height: 50%;
+    margin-bottom: 5%;
+}
+
+.home-container h3{
+    text-align: center;
+}
+
+.home-user-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-user-buttons a{
+    margin-bottom: 15%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    border:outset
+}
+
+.home-user-buttons a::after{
+    text-decoration: none;
+}

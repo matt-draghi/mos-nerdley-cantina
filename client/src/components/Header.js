@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom"
+
 function Header(signedIn){
 
     return(
         <div className="div-wrapper">
-            <div className="header-logo">
+            <NavLink className="header-logo" to="/">
                 MNC
-            </div>
+            </NavLink>
         </div>
     )
 }
