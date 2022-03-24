@@ -2,15 +2,23 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import '../styles/App.css'
 import '../styles/Header.css'
-import '../styles/Home.css'
 import Home from "./Home";
 import Header from "./Header";
 import Signup from "./Signup";
 
+
 function App() {
   const [signedIn, setSignedIn] = useState(false)
 
-  
+  const signupAllowed = () => {
+    if(signedIn){
+      return <Home signedIn={signedIn}/>
+    }
+    else{
+      return <Signup />
+    }
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -22,9 +30,9 @@ function App() {
           <Route exact path="/">
             <Home signedIn={signedIn}/>
           </Route>
-          {/* set path for when user needs to signup */}
+          {/* Update this so user can only access if user is not signed in */}
           <Route path="/signup">
-            <Signup />
+            {signupAllowed}
           </Route>
           {/* set path for when user wishes to login */}
           <Route path="/login">
