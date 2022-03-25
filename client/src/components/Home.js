@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 import '../styles/Home.css'
 
 
@@ -8,6 +8,7 @@ function Home ({user}) {
         return(
             <div className="home-container">
                 <h1>Hello there, {user.first_name}</h1>
+                <h2>Click on a connection to converse, or click on <Link to="/connect">here</Link> to connect with others!</h2>
             </div>
         )
     }

@@ -1,9 +1,9 @@
-header{
+.header-container{
     width: 100%;
     background-color: #7250B2;
     height: 50px;
     display: flex;
-    z-index: 1;
+    z-index: 5;
     margin-bottom: 30px;
     border-bottom: groove thin #8984D5;
 }
@@ -13,7 +13,7 @@ header{
     height: 50px;
     position: fixed;
     background-color: white;
-    z-index: 1;
+    z-index: 5;
     border-radius: 90px;
     font-size: 1rem;
     padding-left: 10px;
@@ -26,5 +26,18 @@ header{
 } 
 
 .nav-buttons{
-    justify-content: end;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.nav-buttons button{
+    height:20px
+}
+
+.nav-buttons a{
+    margin-left: 20%;
+    text-decoration: none;
+    color: aquamarine;
 }

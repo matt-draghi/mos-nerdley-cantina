@@ -12,12 +12,12 @@ function Header({user, setUser}){
     }
 
     return(
-        <>
+        <div className="header-container">
             <NavLink className="header-logo" to="/">
                 Cantina
             </NavLink>
             {showNavButtons()}
-        </>
+        </div>
     )
 }
 

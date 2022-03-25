@@ -6,6 +6,7 @@ import Home from "./Home";
 import Header from "./Header";
 import Signup from "./Signup";
 import Login from "./Login";
+import Sidebar from "./Sidebar";
 
 
 function App() {
@@ -27,24 +28,60 @@ function App() {
       })
   },[])
 
+  const allowNewLogin = () =>{
+    if(user){
+      alert("Please logout before attempting to login")
+      window.location = ('/')
+    }
+    else{
+      return <Login />
+    }
+  }
+
+  const allowNewSignup = () =>{
+    if(user){
+      alert("Please logout before attempting to signup")
+      window.location = ('/')
+    }
+    else{
+      return <Signup setUser={setUser}/>
+    }
+  }
+
+  const sidebar = () => {
+    if(user){
+      return <Sidebar user={user}/>
+    }
+    else{
+      return null
+    }
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
         <header>
           <Header user={user} setUser={setUser}/>
         </header>
-
         <Switch>
           <Route exact path="/">
+            {sidebar()}
             <Home user={user} />
           </Route>
-          {/* Update this so user can only access if user is not signed in */}
+          {/*TODO: Update this so user can only access if user is not signed in */}
           <Route path="/signup" >
-            <Signup setUser={setUser}/>
+            {allowNewSignup}
           </Route>
           {/* set path for when user wishes to login */}
           <Route path="/login">
-            <Login />
+            {allowNewLogin}
+          </Route>
+          <Route path='/connect'>
+            <h1>This will be the connect page</h1>
+          </Route>
+          <Route path='/converse'>
+            {sidebar()}
+            <h1>This will be a conversation that is generated after being selected</h1>
           </Route>
         </Switch>
       </div>

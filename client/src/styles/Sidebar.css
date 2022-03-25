@@ -1,0 +1,27 @@
+.sidebar-container{
+    position: fixed;
+    background-color:grey;
+    height: 100%;
+    width: 10%;
+    top: 50px;
+}
+
+.card-list{
+    margin-top: 50px;
+}
+
+.user-card{
+    display: flex;
+    border-top: groove;
+    border-bottom: groove;
+}
+
+.user-card img{
+    height: 50px;
+    width: 50px;
+    /* transform:  */
+    border-radius: 90px;
+    margin-right: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+}

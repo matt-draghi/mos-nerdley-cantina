@@ -1,3 +1,5 @@
+import {NavLink} from 'react-router-dom'
+
 function NavButtons({setUser}){
 
     const handleLogout = () => {
@@ -9,6 +11,8 @@ function NavButtons({setUser}){
 
     return(
         <div className="nav-buttons">
+            <NavLink id="connect-button" to="/connect">Connect</NavLink>
+            <NavLink id="converse-button" to="/converse">Converse</NavLink>
             <button onClick={handleLogout}>Logout</button>
         </div>
     )
