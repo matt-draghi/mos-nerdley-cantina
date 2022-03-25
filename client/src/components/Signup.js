@@ -1,5 +1,5 @@
 import '../styles/Signup.css'
-import {useState} from 'react'
+import {useState} from 'react' 
 
 function Signup() {
 
@@ -13,6 +13,17 @@ function Signup() {
     const [description, setDescription] = useState("")
     const [image, setImage] = useState("")
     const [character, setCharacter] = useState("")
+
+    // const signupFormData = {
+    //     email: email,
+    //     password: password,
+    //     passwordConfirmation: passwordConfirmation,
+    //     firstName: firstName,
+    //     age: age,
+    //     description: description,
+    //     image: image,
+    //     character: character
+    // }
     
     const ageOptionArray =[]
         for (let i = 13; i < 101; i++){
@@ -29,7 +40,31 @@ function Signup() {
 
     const createProfile = (e) =>{
         e.preventDefault()
+        // debugger
         //now fetch post to create user
+        fetch('/signup',{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+                password_confirmation: passwordConfirmation,
+                first_name: firstName,
+                age: age,
+                description: description,
+                image: image,
+                favorite_character: character
+            })
+        })
+        .then(resp => resp.json())
+        .then(renderResponse => {
+            if(renderResponse["errors"]){
+                alert(renderResponse["errors"])
+            }
+            
+        })
     }
 
     return(

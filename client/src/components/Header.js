@@ -5,7 +5,7 @@ function Header(signedIn){
     return(
         <div className="div-wrapper">
             <NavLink className="header-logo" to="/">
-                MNC
+                Cantina
             </NavLink>
         </div>
     )
