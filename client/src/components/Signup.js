@@ -66,7 +66,7 @@ function Signup({setSignedIn}) {
             }
             // console.log(renderResponse["errors"])
             else{
-                setSignedIn(true)
+                // setSignedIn(true)
                 window.location = ('/')
             }
         })
@@ -170,7 +170,7 @@ function Signup({setSignedIn}) {
                 <br/>
                 <br/>
 
-                <input type="submit" value="Create Profile"/> 
+                <input type="submit" className='form-button' value="Create Profile"/> 
             </form>
         </div>
     )

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
-  # User account creation
+  # User
   post '/signup', to: 'users#create'
-  # get '/me', to: 'users#show'
+  get '/me', to: 'users#show'
+
+  #Session
+  post '/login', to: "sessions#create"
 
 
   get '*path',

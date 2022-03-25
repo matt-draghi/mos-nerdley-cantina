@@ -5,6 +5,7 @@ import '../styles/Header.css'
 import Home from "./Home";
 import Header from "./Header";
 import Signup from "./Signup";
+import Login from "./Login";
 
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
           </Route>
           {/* set path for when user wishes to login */}
           <Route path="/login">
-            {/* <Login /> */}
+            <Login />
           </Route>
         </Switch>
       </div>
