@@ -15,9 +15,9 @@ function App() {
   // const [password, setPassword] = useState("")
   // const [showPass, setShowPass] = useState(false)
   
-  useEffect(()=>{
-    //TODO: set signedIn to true or false based on whether or not session exists
-  })
+  // useEffect(()=>{
+  //   //TODO: set signedIn to true or false based on whether or not session exists
+  // })
 
   const signupAllowed = () => {
     console.log(signedIn)
