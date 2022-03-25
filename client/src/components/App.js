@@ -9,15 +9,23 @@ import Login from "./Login";
 
 
 function App() {
-  const [signedIn, setSignedIn] = useState(false)
+  const [signedIn, setSignedIn] = useState(null)
   //maybe add these here instead of signup and login to keep DRY
   // const [email, setEmail] = useState("")
   // const [password, setPassword] = useState("")
   // const [showPass, setShowPass] = useState(false)
   
-  // useEffect(()=>{
-  //   //TODO: set signedIn to true or false based on whether or not session exists
-  // })
+  useEffect(()=>{
+    //TODO: set signedIn to true or false based on whether or not session exists
+    fetch('/me')
+      .then(resp => {
+        console.log(resp)
+        if(resp.ok){
+          resp.json().then((user) => setSignedIn(user))
+        }
+        console.log(signedIn)
+      })
+  },[])
 
   const signupAllowed = () => {
     console.log(signedIn)
