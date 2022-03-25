@@ -9,13 +9,22 @@ import Signup from "./Signup";
 
 function App() {
   const [signedIn, setSignedIn] = useState(false)
+  //maybe add these here instead of signup and login to keep DRY
+  // const [email, setEmail] = useState("")
+  // const [password, setPassword] = useState("")
+  // const [showPass, setShowPass] = useState(false)
+  
+  useEffect(()=>{
+    //TODO: set signedIn to true or false based on whether or not session exists
+  })
 
   const signupAllowed = () => {
+    console.log(signedIn)
     if(signedIn){
       return <Home signedIn={signedIn}/>
     }
     else{
-      return <Signup />
+      return <Signup setSignedIn={setSignedIn}/>
     }
   }
 
@@ -31,7 +40,7 @@ function App() {
             <Home signedIn={signedIn}/>
           </Route>
           {/* Update this so user can only access if user is not signed in */}
-          <Route path="/signup">
+          <Route path="/signup" >
             {signupAllowed}
           </Route>
           {/* set path for when user wishes to login */}

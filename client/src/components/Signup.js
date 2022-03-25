@@ -1,7 +1,7 @@
 import '../styles/Signup.css'
 import {useState} from 'react' 
 
-function Signup() {
+function Signup({setSignedIn}) {
 
     const [email, setEmail] = useState("")
     const [showPass, setShowPass] = useState(false)
@@ -61,9 +61,14 @@ function Signup() {
         .then(resp => resp.json())
         .then(renderResponse => {
             if(renderResponse["errors"]){
-                alert(renderResponse["errors"])
+                const errorsArray = renderResponse["errors"]
+                errorsArray.map(error => alert(error))
             }
-            
+            // console.log(renderResponse["errors"])
+            else{
+                setSignedIn(true)
+                window.location = ('/')
+            }
         })
     }
 
