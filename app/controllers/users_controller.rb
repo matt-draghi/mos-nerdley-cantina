@@ -6,6 +6,7 @@ class UsersController < ApplicationController
             render json: user, status: 200
         else 
             render json: {error: "Not authorized"}, status: :unauthorized
+        end
     end
 
 
