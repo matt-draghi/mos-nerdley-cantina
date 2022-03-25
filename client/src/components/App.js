@@ -27,30 +27,20 @@ function App() {
       })
   },[])
 
-  const signupAllowed = () => {
-    console.log(signedIn)
-    if(signedIn){
-      return <Home signedIn={signedIn}/>
-    }
-    else{
-      return <Signup setSignedIn={setSignedIn}/>
-    }
-  }
-
   return (
     <BrowserRouter>
       <div className="App">
         <header>
-          <Header signedIn={signedIn}/>
+          <Header signedIn={signedIn} setSignedIn={setSignedIn}/>
         </header>
 
         <Switch>
           <Route exact path="/">
-            <Home signedIn={signedIn}/>
+            <Home signedIn={signedIn} />
           </Route>
           {/* Update this so user can only access if user is not signed in */}
           <Route path="/signup" >
-            {signupAllowed}
+            <Signup setSignedIn={setSignedIn}/>
           </Route>
           {/* set path for when user wishes to login */}
           <Route path="/login">

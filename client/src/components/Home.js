@@ -4,9 +4,11 @@ import '../styles/Home.css'
 
 function Home ({signedIn}) {
     
-    if(signedIn === true){
+    if(signedIn){
         return(
-            <h1>Signed in Home</h1>
+            <div className="home-container">
+                <h1>Welcome Back, {signedIn.first_name}</h1>
+            </div>
         )
     }
     else{

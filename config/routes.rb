@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   #Session
   post '/login', to: "sessions#create"
+  delete '/logout', to: "sessions#destroy"
 
-
+  #HTML
   get '*path',
     to: 'fallback#index',
     constraints: ->(req) { !req.xhr? && req.format.html? }
