@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom"
 import '../styles/Home.css'
 
 
-function Home ({signedIn}) {
+function Home ({user}) {
     
-    if(signedIn){
+    if(user){
         return(
             <div className="home-container">
-                <h1>Welcome Back, {signedIn.first_name}</h1>
+                <h1>Hello there, {user.first_name}</h1>
             </div>
         )
     }

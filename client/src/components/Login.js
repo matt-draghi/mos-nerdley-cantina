@@ -28,7 +28,6 @@ function Login(){
                 alert(renderResponse["errors"])
             }
             else{
-                // setSignedIn(true)
                 window.location = ('/')
                 console.log(renderResponse)
             }       

@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom"
 import NavButtons from "./NavButtons"
 
-function Header({signedIn, setSignedIn}){
+function Header({user, setUser}){
 
     const showNavButtons = () =>{
-        if(signedIn){
+        if(user){
             return(
-                <NavButtons setSignedIn={setSignedIn}/>
+                <NavButtons setUser={setUser}/>
             )
         }
     }

@@ -1,7 +1,7 @@
 import '../styles/Signup.css'
 import {useState} from 'react' 
 
-function Signup({setSignedIn}) {
+function Signup() {
 
     const [email, setEmail] = useState("")
     const [showPass, setShowPass] = useState(false)
@@ -13,17 +13,6 @@ function Signup({setSignedIn}) {
     const [description, setDescription] = useState("")
     const [image, setImage] = useState("")
     const [character, setCharacter] = useState("")
-
-    // const signupFormData = {
-    //     email: email,
-    //     password: password,
-    //     passwordConfirmation: passwordConfirmation,
-    //     firstName: firstName,
-    //     age: age,
-    //     description: description,
-    //     image: image,
-    //     character: character
-    // }
     
     const ageOptionArray =[]
         for (let i = 13; i < 101; i++){
@@ -66,7 +55,6 @@ function Signup({setSignedIn}) {
             }
             // console.log(renderResponse["errors"])
             else{
-                // setSignedIn(true)
                 window.location = ('/')
             }
         })

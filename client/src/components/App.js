@@ -9,7 +9,7 @@ import Login from "./Login";
 
 
 function App() {
-  const [signedIn, setSignedIn] = useState(null)
+  const [user, setUser] = useState(null)
   //maybe add these here instead of signup and login to keep DRY
   // const [email, setEmail] = useState("")
   // const [password, setPassword] = useState("")
@@ -21,9 +21,9 @@ function App() {
       .then(resp => {
         console.log(resp)
         if(resp.ok){
-          resp.json().then((user) => setSignedIn(user))
+          resp.json().then((user) => setUser(user))
         }
-        console.log(signedIn)
+        console.log(user)
       })
   },[])
 
@@ -31,16 +31,16 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <header>
-          <Header signedIn={signedIn} setSignedIn={setSignedIn}/>
+          <Header user={user} setUser={setUser}/>
         </header>
 
         <Switch>
           <Route exact path="/">
-            <Home signedIn={signedIn} />
+            <Home user={user} />
           </Route>
           {/* Update this so user can only access if user is not signed in */}
           <Route path="/signup" >
-            <Signup setSignedIn={setSignedIn}/>
+            <Signup setUser={setUser}/>
           </Route>
           {/* set path for when user wishes to login */}
           <Route path="/login">

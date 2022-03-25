@@ -1,10 +1,10 @@
-function NavButtons({setSignedIn}){
+function NavButtons({setUser}){
 
     const handleLogout = () => {
         fetch('/logout',{
             method:"DELETE",
         })
-        .then(() => setSignedIn(null))
+        .then(() => setUser(null))
     }
 
     return(
