@@ -1,7 +1,7 @@
 user1 = User.create(
     first_name: "test",
     email: "test@test.com",
-    password_digest: "$2a$12$I7l9nblJMT.VnDrf10URYONUAdiOcG3WImORWMFGymxeKpti4OqIu",
+    password_digest: "$2a$12$I7l9nblJMT.VnDrf10URYONUAdiOcG3WImORWMFGymxeKpti4OqIu", #test
     location: "New York",
     age: 15,
     image: "https://picsum.photos/200/300",
@@ -9,17 +9,17 @@ user1 = User.create(
     description: "i am a test",
 )
 
-user2 = User.create(
-    first_name: "Emily",
-    email: "emily@test.com",
-    password_digest: "$2a$12$KOlvZpWCx6GCcoHCbU21r.4dxOglfBvNRuoKu3oVQW4ctSDR04wxq",
-    location: "Ohio",
-    age: 23,
-    image: "https://picsum.photos/200/300",
-    favorite_character: "Obi Wan",
-    description: "im emily",
+# user2 = User.create(
+#     first_name: "Emily",
+#     email: "emily@test.com",
+#     password_digest: "$2a$12$KOlvZpWCx6GCcoHCbU21r.4dxOglfBvNRuoKu3oVQW4ctSDR04wxq",
+#     location: "Ohio",
+#     age: 23,
+#     image: "https://picsum.photos/200/300",
+#     favorite_character: "Obi Wan",
+#     description: "im emily",
 
-)
+# )
 
 # connection1 = Connection.create(
 #     first_name: user2.first_name,
