@@ -4,7 +4,7 @@ import { AiOutlineDislike, AiOutlineLike, AiTwotoneDislike, AiTwotoneLike } from
 function ConnectCards({displayedUser, handleLike}){
     const {first_name, email, location, age, favorite_character, description, image} = displayedUser
 
-    const newUser = {
+    const newConnection = {
         first_name: first_name,
         email: email,
         location: location,
@@ -12,10 +12,11 @@ function ConnectCards({displayedUser, handleLike}){
         favorite_character: favorite_character,
         description: description,
         image: image,
+        liked: true
     }
 
     const likeButtonHandler = () =>{
-        handleLike(newUser)
+        handleLike(newConnection)
     }
     
     return(

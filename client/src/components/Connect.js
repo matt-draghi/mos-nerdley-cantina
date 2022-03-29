@@ -27,20 +27,20 @@ function Connect(){
         }
     }
 
-    const handleLike = (newUser) => {
+    const handleLike = (newConnection) => {
         // fetch post to create connection with displayed user
         fetch('/connection', {
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
             },
-            body: JSON.stringify(newUser)
+            body: JSON.stringify(newConnection)
         })
         .then(resp => resp.json())
-        .then(newConnection => console.log(newConnection))
+        .then(connectionInfo => console.log(connectionInfo))
 
         // then remove liked user from possible connections
-        const updatedPossibleConnections = possibleConnections.filter(possibleConnection => possibleConnection.email !== newUser.email)
+        const updatedPossibleConnections = possibleConnections.filter(possibleConnection => possibleConnection.email !== newConnection.email)
         setPossibleConnections(updatedPossibleConnections)
     
         console.log(possibleConnections)
