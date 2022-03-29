@@ -20,6 +20,6 @@ class ConnectionsController < ApplicationController
     private
 
     def connection_params
-        params.permit(:first_name, :email, :location, :age, :image, :favorite_character, :description)
+        params.permit(:first_name, :email, :location, :age, :image, :favorite_character, :description, :liked)
     end
 end

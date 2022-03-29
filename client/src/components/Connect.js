@@ -20,14 +20,14 @@ function Connect(){
 
     const displayUserCard = () => {
         if (displayedUser){
-            return <ConnectCards displayedUser={displayedUser} handleLike={handleLike}/>
+            return <ConnectCards displayedUser={displayedUser} handleConnection={handleConnection}/>
         }
         else{
             return (<h3>No new potential nerds</h3>)
         }
     }
 
-    const handleLike = (newConnection) => {
+    const handleConnection = (newConnection) => {
         // fetch post to create connection with displayed user
         fetch('/connection', {
             method: "POST",

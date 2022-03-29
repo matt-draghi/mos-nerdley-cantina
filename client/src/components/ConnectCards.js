@@ -1,7 +1,7 @@
 
 import { AiOutlineDislike, AiOutlineLike, AiTwotoneDislike, AiTwotoneLike } from "react-icons/ai";
 
-function ConnectCards({displayedUser, handleLike}){
+function ConnectCards({displayedUser, handleConnection}){
     const {first_name, email, location, age, favorite_character, description, image} = displayedUser
 
     const newConnection = {
@@ -12,11 +12,16 @@ function ConnectCards({displayedUser, handleLike}){
         favorite_character: favorite_character,
         description: description,
         image: image,
-        liked: true
     }
 
     const likeButtonHandler = () =>{
-        handleLike(newConnection)
+        newConnection.liked = true
+        handleConnection(newConnection)
+    }
+
+    const dislikeButtonHandler = () => {
+        newConnection.liked = false
+        handleConnection(newConnection)
     }
     
     return(
@@ -31,7 +36,7 @@ function ConnectCards({displayedUser, handleLike}){
             <div className="like-dislike">
                 {/* dislike button */}
                 {/* TODO: make a dislike table?? */}
-                <AiTwotoneDislike className="icon" id="dislike"/>
+                <AiTwotoneDislike className="icon" id="dislike" onClick={dislikeButtonHandler}/>
                 {/* Like button */}
                 <AiTwotoneLike className="icon" id="like" onClick={likeButtonHandler}/>
             </div>
