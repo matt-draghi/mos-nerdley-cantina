@@ -1,8 +1,8 @@
 .sidebar-container{
     position: fixed;
-    background-color:grey;
+    background-color: white;
     height: 100%;
-    width: 10%;
+    width: 17%;
     top: 50px;
 }
 
@@ -12,8 +12,9 @@
 
 .user-card{
     display: flex;
-    border-top: groove;
-    border-bottom: groove;
+    border-top: groove grey;
+    border-bottom: groove grey;
+    text-align: center;
 }
 
 .user-card img{
@@ -24,4 +25,39 @@
     margin-right: 10px;
     margin-left: 5px;
     margin-top: 5px;
+}
+
+.card-header{
+    display: flex;
+}
+
+.match-card{
+    border-top: groove thick grey;
+    border-bottom: groove thick grey;
+}
+
+.match-card img{
+    height: 50px;
+    width: 50px;
+    /* transform:  */
+    border-radius: 90px;
+    margin-right: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#buffer{
+    /* height: 10px */
+    text-align: center;
+}
+
+.card-message{
+    opacity: .5;
+    margin-left: 3%;
+    font-size: .7rem;
+}
+
+.sidebar-container a{
+    text-decoration: none;
+    color: black;
 }
