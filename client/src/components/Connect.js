@@ -42,9 +42,6 @@ function Connect(){
         // then remove liked user from possible connections
         const updatedPossibleConnections = possibleConnections.filter(possibleConnection => possibleConnection.email !== newUser.email)
         setPossibleConnections(updatedPossibleConnections)
-        // debugger
-        // const userIndex = Math.floor(Math.random() * possibleConnections?.length)
-        // const displayedUser = possibleConnections[userIndex]
     
         console.log(possibleConnections)
     }

@@ -33,11 +33,14 @@
 }
 
 .nav-buttons button{
-    height:20px
+    height:20px;
+    /* border-radius: 25px; */
 }
 
 .nav-buttons a{
     margin-left: 20%;
     text-decoration: none;
-    color: aquamarine;
+    color: black;
+    outline: solid black;
+    border-radius: 25px;
 }

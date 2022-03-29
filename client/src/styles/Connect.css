@@ -1,29 +1,34 @@
 .connect-container{
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .connect-card{
-    width:50%;
-    /* outline: solid; */
+    margin-top: 3%;
+    outline: solid;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 2%;
 }
 
 .card-image{
+    margin-top: 2%;
     height: 65%;
     width: 85%;
-    margin-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: groove;
+    border: solid;
+    border-radius: 25px;
 }
 
 .card-image img{
     height: 100%;
     width: 100%;
+    border-radius: 25px;
 }
 
 .card-info{
@@ -45,10 +50,16 @@
 .card-description{
     outline: solid;
     width: 85%;
+    border-radius: 10px;
 }
 
 .card-description p{
-    margin-left: 5%;
+    padding-left: 5%;
+    margin-bottom: 1%;
+}
+
+#favorite-character{
+    border-top: solid;
 }
 
 .like-dislike{
