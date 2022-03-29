@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #Allow user to update their info - update
   patch  '/users/:id', to: "users#update"
   #Allow user to delete account - destroy
-
+  delete '/users/:id', to: "users#destroy"
   #Session
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"

@@ -96,7 +96,10 @@ function App() {
     if(user){
       return( 
         <Profile 
+          password={password}
+          setPassword={setPassword}
           user={user}
+          setUser={setUser}
           email={email}
           setEmail={setEmail}
           firstName={firstName}

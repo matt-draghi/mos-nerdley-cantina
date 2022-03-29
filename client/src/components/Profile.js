@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import "../styles/Profile.css"
 
-function Profile({user, email, setEmail, firstName, setFirstName, age, setAge, description, setDescription, image, setImage, character, setCharacter}){
+function Profile({password, setPassword, user, setUser, email, setEmail, firstName, setFirstName, age, setAge, description, setDescription, image, setImage, character, setCharacter}){
 
     const [editProfile, setEditProfile] = useState(false)
     const [modalShow, setModalShow] = useState(false)
@@ -52,16 +52,45 @@ function Profile({user, email, setEmail, firstName, setFirstName, age, setAge, d
     }
 
 
-    const handleDelete=()=>{
-        setModalShow(modalShow => !modalShow)
-        console.log(modalShow)
+    const handleDeleteButton = ()=>{
+        setModalShow(true)
     }
 
-    const modal = () =>{
-        modalShow ? 
-            <dialog open className='modal'>Are you sure you want to delete your profile?</dialog>
-            :
-            <dialog className='modal'>Are you sure you want to delete your profile?</dialog>
+    const closeModal = () => {
+        setModalShow(false)
+    }
+
+    const deleteProfile = (e) => {
+        e.preventDefault()
+        console.log("Profile Deleted", password)
+        // Fetch to delete here
+        fetch(`/users/${user.id}`,{
+            method: "DELETE",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                password:password
+            })
+        })
+        .then(resp => resp.json())
+        .then(renderResponse => {
+            console.log(renderResponse)
+            if(renderResponse["errors"]){
+                alert(renderResponse["errors"])
+            }
+            else{
+                setUser(null)
+                window.location = ('/')
+                
+            }
+        })
+        //take you back to home and set user to null
+        // closeModal()
+    }
+
+    const handlePasswordInput = (e) => {
+        setPassword(e.target.value)
     }
 
     if (editProfile === true){
@@ -147,9 +176,26 @@ function Profile({user, email, setEmail, firstName, setFirstName, age, setAge, d
                 <br/>
                 <div className='profile-buttons'>
                     <button onClick={() => setEditProfile(true)}>Edit Profile</button>
-                    <button onClick={handleDelete}>Delete Profile</button>
+                    <button onClick={handleDeleteButton}>Delete Profile</button>
                 </div>
-                {modal()}
+
+                <dialog open={modalShow} className='modal'>
+                    <h1>Are you sure you want to delete your profile?</h1>
+                    <h3>Confirm by entering your password:</h3>
+                    
+                    <div className='input-container'>
+                        <form className='delete-form' onSubmit={deleteProfile}>
+                            <input type="password" value={password} onChange={handlePasswordInput}/>
+                        
+                            <div className='delete-buttons'>
+                                <input type="submit" value="Yes, delete my profile"/>
+                            </div>
+                        </form>
+                        <button onClick={closeModal}>Nope</button>
+                    </div>
+
+                </dialog>
+
             </div>
         )
     }
