@@ -9,6 +9,7 @@ import Login from "./Login";
 import Sidebar from "./Sidebar";
 import Connect from "./Connect";
 import Profile from "./Profile";
+import Converse from "./Converse";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -22,6 +23,7 @@ function App() {
   const [description, setDescription] = useState("")
   const [image, setImage] = useState("")
   const [character, setCharacter] = useState("")
+  const [targetedConvo, setTargetedConvo] = useState()
   
   useEffect(()=>{
     fetch('/me')
@@ -85,7 +87,7 @@ function App() {
 
   const sidebar = () => {
     if(user){
-      return <Sidebar user={user}/>
+      return <Sidebar user={user} targetedConvo={targetedConvo} setTargetedConvo={setTargetedConvo}/>
     }
     else{
       return null
@@ -142,6 +144,7 @@ function App() {
           </Route>
           <Route path='/converse'>
             {sidebar()}
+            <Converse />
           </Route>
           <Route path='/profile'>
             {editProfile()}

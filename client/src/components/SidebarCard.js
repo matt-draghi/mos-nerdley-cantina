@@ -2,8 +2,12 @@ function SidebarCard({match}){
 
     const {first_name, image, description} = match
 
+    const openConversation = () =>{
+        console.log(match)
+    }
+
     return(
-        <div className="match-card">
+        <div onClick={openConversation} className="match-card">
             <div className="card-header">
                 <img src={image}/>
                 <h4>{first_name}</h4>

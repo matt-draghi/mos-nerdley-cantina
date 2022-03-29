@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import { NavLink } from "react-router-dom"
 import SidebarCard from "./SidebarCard"
 
-function Sidebar({user}){
+function Sidebar({user, targetedConvo, setTargetedConvo}){
    
     const [matches, setMatches] = useState()
 
@@ -19,21 +19,27 @@ function Sidebar({user}){
 
 
     const {first_name, image} = user
+  
 
     return(
         <div className="sidebar-container">
             <div className="card-list">
-                <div className="user-card">
+                <NavLink to='/profile' className="user-card">
                     <img src={image}/>
                     <h4>{first_name}</h4>
-                </div>
+                </NavLink>
                 <div id="buffer">
                     <h3>Conversations</h3>
                 </div>
                 {/* Map connections to sidebar cards */}
                 {matches?.map((match) => {
                     return (
-                        <NavLink to='/converse'><SidebarCard key={match.email} match={match}/></NavLink>
+                        <SidebarCard 
+                            key={match.email} 
+                            match={match} 
+                            targetedConvo={targetedConvo} 
+                            setTargetedConvo={setTargetedConvo}
+                        />
                     )
                 })}
             </div>
