@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
   #going to want to grab all users that aren't "me" and set them as connections
+  get '/users', to: "users#index"
 
   #Session
   post '/login', to: "sessions#create"
@@ -11,7 +12,10 @@ Rails.application.routes.draw do
 
 
   #Connections
-  get '/connections', to: "connections#index"
+  post '/connection', to: "connections#create"
+  get '/connection', to: "connections#index"
+
+  #Messages
 
   #HTML
   get '*path',

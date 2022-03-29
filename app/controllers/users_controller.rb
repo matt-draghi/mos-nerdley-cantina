@@ -1,5 +1,17 @@
 class UsersController < ApplicationController
 
+    def index
+        #first grab all users that is not our current user
+        other_users = User.all.select{|user| user.id != session[:user_id]}
+        #then create an array of all emails for our user's connections
+        connected_users = User.find_by(id: session[:user_id]).connections.pluck(:email)
+        #create a list of users where the user email is not in connected users
+        available_users = other_users.select{|user| !connected_users.include?(user.email)}
+        # debugger
+        # render json: other_users, serializer: UserOtherSerializer, status: 200
+        render json: available_users.to_json(only: [:id, :email, :first_name, :description, :age, :favorite_character, :location, :image]), status: 200
+    end
+
     def show
         user = User.find_by(id: session[:user_id])
         if user

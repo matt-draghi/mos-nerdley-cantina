@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
     # has_many :likes
     has_many :conversations
-    has_one :connection, through: :conversation
-    has_many :text_messages, through: :conversations
+    has_many :connections
+    # has_many :messages, through: :conversations
 
     private
 

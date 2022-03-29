@@ -1,6 +1,6 @@
-class Connection < ApplicationController
-    has_many :messages
-    has_many :users, through: :messages
+class Connection < ApplicationRecord
+    belongs_to :user
+    has_one :conversation
+    # has_many :messages, through: :conversation
 
-    
 end

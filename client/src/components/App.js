@@ -7,7 +7,7 @@ import Header from "./Header";
 import Signup from "./Signup";
 import Login from "./Login";
 import Sidebar from "./Sidebar";
-
+import Connect from "./Connect";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -17,7 +17,6 @@ function App() {
   // const [showPass, setShowPass] = useState(false)
   
   useEffect(()=>{
-    //TODO: set signedIn to true or false based on whether or not session exists
     fetch('/me')
       .then(resp => {
         console.log(resp)
@@ -68,20 +67,17 @@ function App() {
             {sidebar()}
             <Home user={user} />
           </Route>
-          {/*TODO: Update this so user can only access if user is not signed in */}
           <Route path="/signup" >
             {allowNewSignup}
           </Route>
-          {/* set path for when user wishes to login */}
           <Route path="/login">
             {allowNewLogin}
           </Route>
           <Route path='/connect'>
-            <h1>This will be the connect page</h1>
+            <Connect />
           </Route>
           <Route path='/converse'>
             {sidebar()}
-            <h1>This will be a conversation that is generated after being selected</h1>
           </Route>
         </Switch>
       </div>

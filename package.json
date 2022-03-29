@@ -9,5 +9,11 @@
         "clean": "rm -rf public",
         "deploy": "cp -a client/build/. public/",
         "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.1.1",
+        "@fortawesome/free-solid-svg-icons": "^6.1.1",
+        "@fortawesome/react-fontawesome": "^0.1.18",
+        "react-icons": "^4.3.1"
     }
 }
