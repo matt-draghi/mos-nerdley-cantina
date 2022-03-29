@@ -23,7 +23,7 @@ function Connect(){
             return <ConnectCards displayedUser={displayedUser} handleLike={handleLike}/>
         }
         else{
-            return (<h3>No connections available</h3>)
+            return (<h3>No new potential nerds</h3>)
         }
     }
 
@@ -40,8 +40,12 @@ function Connect(){
         .then(newConnection => console.log(newConnection))
 
         // then remove liked user from possible connections
-        possibleConnections.splice(userIndex)
-        setPossibleConnections(possibleConnections => [...possibleConnections])
+        const updatedPossibleConnections = possibleConnections.filter(possibleConnection => possibleConnection.email !== newUser.email)
+        setPossibleConnections(updatedPossibleConnections)
+        // debugger
+        // const userIndex = Math.floor(Math.random() * possibleConnections?.length)
+        // const displayedUser = possibleConnections[userIndex]
+    
         console.log(possibleConnections)
     }
 
