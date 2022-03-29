@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
     def show
         user = User.find_by(id: session[:user_id])
+        # debugger
         if user
             render json: user, status: 200
         else 
@@ -32,11 +33,25 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        user = User.find_by(id: session[:user_id])
+        if user
+            user.update(update_params)
+            render json: user, status: 200
+        else
+            render json: {errors: user.errors.full_messages}, status: 422
+        end
+    end
+
 
     private
 
     def user_params
         params.permit( :email, :password, :password_confirmation, :first_name, :age, :image, :favorite_character, :description)
+    end
+
+    def update_params #can add password back in later as stretch
+        params.permit( :email, :first_name, :age, :image, :favorite_character, :description )
     end
 
 end

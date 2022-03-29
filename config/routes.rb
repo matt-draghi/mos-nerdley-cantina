@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #going to want to grab all users that aren't "me" and set them as connections
   get '/users', to: "users#index"
   #Allow user to update their info - update
-
+  patch  '/users/:id', to: "users#update"
   #Allow user to delete account - destroy
 
   #Session

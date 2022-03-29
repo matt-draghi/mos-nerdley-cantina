@@ -1,19 +1,11 @@
 import '../styles/Signup.css'
-import {useState} from 'react' 
+import {useState} from 'react'
 
-function Signup() {
-
-    const [email, setEmail] = useState("")
+function Signup({password, setPassword, passwordConfirmation, setPasswordConfirmation, email, setEmail, firstName, setFirstName, age, setAge, description, setDescription, image, setImage, character, setCharacter}) {
+    
     const [showPass, setShowPass] = useState(false)
     const [showPassConf, setShowPassConf] = useState(false)
-    const [password, setPassword] = useState("")
-    const [passwordConfirmation, setPasswordConfirmation] = useState("")
-    const [firstName, setFirstName] = useState("")
-    const [age, setAge] = useState("Please select your age")
-    const [description, setDescription] = useState("")
-    const [image, setImage] = useState("")
-    const [character, setCharacter] = useState("")
-    
+
     const ageOptionArray =[]
         for (let i = 13; i < 101; i++){
             ageOptionArray.push(i)
@@ -53,7 +45,6 @@ function Signup() {
                 const errorsArray = renderResponse["errors"]
                 errorsArray.map(error => alert(error))
             }
-            // console.log(renderResponse["errors"])
             else{
                 window.location = ('/')
             }

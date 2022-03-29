@@ -33,6 +33,7 @@
 }
 
 .nav-buttons button{
+    margin-left: 5%;
     height:20px;
     /* border-radius: 25px; */
 }
