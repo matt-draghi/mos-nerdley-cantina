@@ -7,6 +7,7 @@ function Converse({targetedConvo, user}){
 
     const [message, setMessage] = useState("")
     const [conversationMessages, setConversationMessages] = useState([])
+    // const [displayedMessages, setDisplayedMessages] = useState()
 
     useEffect(()=>{
         // Use this to get the messages from the conversation
@@ -22,12 +23,10 @@ function Converse({targetedConvo, user}){
         else{
             console.log("No convo selected")
         }
-    },[])
-    
-    const displayMessages = () => {
-        // console.log(conversationMessages)
-        
-    }
+        // going to need to change when this triggers, but for now will keep it at fetching when the message
+        // is change
+    },[ ,targetedConvo])
+  
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -45,7 +44,7 @@ function Converse({targetedConvo, user}){
             body: JSON.stringify(submittedMessage)
         })
         .then(response => response.json())
-        .then(message => console.log(message))
+        .then(message => setConversationMessages(conversationMessages => [...conversationMessages, message]))
     }
 
     if (targetedConvo){
@@ -61,7 +60,7 @@ function Converse({targetedConvo, user}){
                         {/* Map through messages for conversation and if user.id = message.user_id, it will be blue and on the right*/}
                         {conversationMessages?.map((individualMessage) => {
                             console.log(individualMessage)
-                            return (<MessageBubble user={user} message={individualMessage}/>)
+                            return (<MessageBubble key={individualMessage.id} user={user} message={individualMessage}/>)
                         })}
                     </div>
                     <div className="message-input-container">

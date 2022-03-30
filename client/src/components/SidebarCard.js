@@ -10,8 +10,8 @@ function SidebarCard({match, setTargetedConvo}){
     }
 
     return(
-        <NavLink to='/converse'>
-            <div onClick={openConversation} className="match-card">
+        <NavLink onClick={openConversation} to='/converse'>
+            <div className="match-card">
                 <div className="card-header">
                     <img src={image}/>
                     <h4>{first_name}</h4>

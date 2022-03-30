@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
         message = Message.new()
         main_user = User.find_by(id: session[:user_id])
         connection = main_user.connections.find_by(email: params[:connection_email])
-        debugger
+        # debugger
         conversation = Conversation.find_by(user_id: main_user.id, connection_id: connection.id)
         message.conversation_id = conversation.id
         message.associated_email = params[:associated_email]
