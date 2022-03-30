@@ -44,7 +44,10 @@ function Converse({targetedConvo, user}){
             body: JSON.stringify(submittedMessage)
         })
         .then(response => response.json())
-        .then(message => setConversationMessages(conversationMessages => [...conversationMessages, message]))
+        .then(message => {
+            setConversationMessages(conversationMessages => [...conversationMessages, message])
+            setMessage("")
+        })
     }
 
     if (targetedConvo){
