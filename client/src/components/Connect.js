@@ -10,7 +10,6 @@ function Connect(){
         .then(response => response.json())
         .then(availableUsers => {
             setPossibleConnections(availableUsers)
-            console.log(availableUsers)
         })
     },[])
 
