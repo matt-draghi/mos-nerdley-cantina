@@ -23,8 +23,7 @@ function Converse({targetedConvo, user}){
         else{
             console.log("No convo selected")
         }
-        // going to need to change when this triggers, but for now will keep it at fetching when the message
-        // is change
+        //STRETCH TODO: constant updates to make sure messages are updated real time - without submission
     },[ ,targetedConvo])
   
 
