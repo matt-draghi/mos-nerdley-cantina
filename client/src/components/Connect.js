@@ -37,13 +37,25 @@ function Connect(){
             body: JSON.stringify(newConnection)
         })
         .then(resp => resp.json())
-        .then(connectionInfo => console.log(connectionInfo))
+        .then(connectionInfo => createConversation(connectionInfo))
 
         // then remove liked user from possible connections
         const updatedPossibleConnections = possibleConnections.filter(possibleConnection => possibleConnection.email !== newConnection.email)
         setPossibleConnections(updatedPossibleConnections)
     
         console.log(possibleConnections)
+    }
+
+    const createConversation = (connectionInfo) => {
+        fetch('/conversation',{
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(connectionInfo)
+        })
+        .then(response => response.json())
+        .then(converastion => console.log(converastion))
     }
 
     return(
