@@ -28,7 +28,7 @@ function App() {
   useEffect(()=>{
     fetch('/me')
       .then(resp => {
-        console.log(resp)
+        // console.log(resp)
         if(resp.ok){
           resp.json().then((user) => {
             setUser(user)
@@ -40,8 +40,8 @@ function App() {
             setCharacter(user.favorite_character)
           })
         }
-        console.log("The fetch for user info is happening")
-        console.log(user)
+        // console.log("The fetch for user info is happening")
+        // console.log(user)
       })
   },[])
 
@@ -153,7 +153,7 @@ function App() {
           </Route>
           <Route path='/converse'>
             {sidebar()}
-            <Converse targetedConvo={targetedConvo}/>
+            <Converse targetedConvo={targetedConvo} user={user}/>
           </Route>
           <Route path='/profile'>
             {editProfile()}

@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration[6.1]
       t.integer :conversation_id
       t.boolean :read_status
       t.string :message
-      t.integer :user_id
+      t.string :associated_email
 
       t.timestamps
     end

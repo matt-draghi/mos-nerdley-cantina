@@ -20,7 +20,7 @@ class ConnectionsController < ApplicationController
             end
             }
             # byebug
-        render json: matches, only:[:age,:description, :first_name, :image, :location, :favorite_character, :email], status: 200
+        render json: matches, only:[:id, :age,:description, :first_name, :image, :location, :favorite_character, :email], status: 200
     end
 
     # def show

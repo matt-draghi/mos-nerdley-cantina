@@ -5,13 +5,13 @@ function SidebarCard({match, setTargetedConvo}){
     const {first_name, image} = match
 
     const openConversation = () =>{
-        // console.log(match)
+        console.log(match)
         setTargetedConvo(match)
     }
 
     return(
-        <NavLink to='/converse'onClick={openConversation} >
-            <div className="match-card">
+        <NavLink to='/converse'>
+            <div onClick={openConversation} className="match-card">
                 <div className="card-header">
                     <img src={image}/>
                     <h4>{first_name}</h4>

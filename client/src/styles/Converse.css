@@ -6,11 +6,17 @@
     height: 80%;
 }
 
-/* .converse-container h1{
-    justify-self: center;
-} */
+.messages-container{
+    height:100%
+}
+
+.conversation-header{
+    display: flex;
+    align-items: center;
+}
+
 .converse-container *{
-    border: solid;
+    /* border: solid; */
 }
 
 .conversation-frame{
@@ -18,6 +24,7 @@
     height: 90%;
     border: solid;
     display: flex;
+    flex-direction: column;
 }
 
 .message-input-container{
@@ -25,4 +32,17 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    outline: solid;
+    height: 7%;
+    align-items: center;
+}
+
+.converse-container img{
+    height: 50px;
+    width: 50px;
+    /* transform:  */
+    border-radius: 90px;
+    margin-right: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
 }

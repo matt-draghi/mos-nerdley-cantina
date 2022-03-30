@@ -12,8 +12,8 @@ function Sidebar({user, targetedConvo, setTargetedConvo}){
         .then(response => response.json())
         .then(data => {
             setMatches(data)
-            console.log("data",data)
-            console.log("matches",matches)
+            // console.log("data",data)
+            // console.log("matches",matches)
         })
     },[])
 

@@ -5,6 +5,11 @@ class ConversationsController < ApplicationController
         render json: conversations, status: 200
     end
 
+    def show
+        user = User.find_by(id: session[:user_id])
+        connection_user = user.connections.find_by(email: params[email])
+    end
+
     def create
         #if matched, then save the conversation
         main_user = User.find_by(id: session[:user_id])
