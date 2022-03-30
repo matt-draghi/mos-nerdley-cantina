@@ -1,12 +1,20 @@
 import {NavLink} from 'react-router-dom'
 
-function NavButtons({setUser}){
+function NavButtons({setUser, setEmail, setFirstName, setAge, setDescription,  setImage, setCharacter}){
 
     const handleLogout = () => {
         fetch('/logout',{
             method:"DELETE",
         })
-        .then(() => setUser(null))
+        .then(() => {
+            setUser(null)
+            setEmail("")
+            setFirstName("")
+            setAge("Please select your age")
+            setDescription("")
+            setImage("")
+            setCharacter("")
+        })
     }
 
     return(

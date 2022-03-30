@@ -1,3 +1,28 @@
 .converse-container{
     margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    height: 80%;
+}
+
+/* .converse-container h1{
+    justify-self: center;
+} */
+.converse-container *{
+    border: solid;
+}
+
+.conversation-frame{
+    width: 75%;
+    height: 90%;
+    border: solid;
+    display: flex;
+}
+
+.message-input-container{
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

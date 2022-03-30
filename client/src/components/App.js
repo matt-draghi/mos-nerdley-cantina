@@ -126,7 +126,16 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <header>
-          <Header user={user} setUser={setUser}/>
+          <Header 
+            user={user} 
+            setUser={setUser}
+            setEmail={setEmail}
+            setFirstName={setFirstName}
+            setAge={setAge}
+            setDescription={setDescription}
+            setImage={setImage}
+            setCharacter={setCharacter}
+          />
         </header>
         <Switch>
           <Route exact path="/">
@@ -144,7 +153,7 @@ function App() {
           </Route>
           <Route path='/converse'>
             {sidebar()}
-            <Converse />
+            <Converse targetedConvo={targetedConvo}/>
           </Route>
           <Route path='/profile'>
             {editProfile()}
