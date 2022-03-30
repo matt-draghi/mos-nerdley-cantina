@@ -6,10 +6,9 @@ class User < ApplicationRecord
     validate :real_email
     validates :email, uniqueness: true
 
-    # has_many :likes
-    has_many :conversations
-    has_many :connections
-    # has_many :messages, through: :conversations
+    has_many :conversations, dependent: :destroy
+    has_many :connections, dependent: :destroy
+    has_many :messages, through: :conversations
 
     private
 

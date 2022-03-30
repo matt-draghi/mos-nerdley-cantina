@@ -5,6 +5,7 @@ import '../styles/Connect.css'
 function Connect(){
 
     const [possibleConnections, setPossibleConnections] = useState([])
+    
     useEffect(()=>{
         fetch('/users')
         .then(response => response.json())
@@ -12,19 +13,6 @@ function Connect(){
             setPossibleConnections(availableUsers)
         })
     },[])
-
-    const userIndex = Math.floor(Math.random() * possibleConnections?.length)
-    const displayedUser = possibleConnections[userIndex]
-    
-
-    const displayUserCard = () => {
-        if (displayedUser){
-            return <ConnectCards displayedUser={displayedUser} handleConnection={handleConnection}/>
-        }
-        else{
-            return (<h3>No new potential nerds</h3>)
-        }
-    }
 
     const handleConnection = (newConnection) => {
         // fetch post to create connection with displayed user
@@ -57,11 +45,22 @@ function Connect(){
         .then(converastion => console.log(converastion))
     }
 
+    const userIndex = Math.floor(Math.random() * possibleConnections?.length)
+    const displayedUser = possibleConnections[userIndex]
+    
+
+    const displayUserCard = () => {
+        if (displayedUser){
+            return <ConnectCards displayedUser={displayedUser} handleConnection={handleConnection}/>
+        }
+        else{
+            return (<h3>No new potential nerds</h3>)
+        }
+    }
+
     return(
         <div className="connect-container">
             {displayUserCard()}
-            {/* create connect cards - on like, add the user to the connections table */}
-            {/* on dislike, add to connection page as well? will then go off of dislike and like booleans */}
         </div>
     )
 }

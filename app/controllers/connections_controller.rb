@@ -10,7 +10,16 @@ class ConnectionsController < ApplicationController
         liked_users = User.all.select{|user| connection_emails.include?(user.email)}
         #create an array of users where you liked the user and they liked you
         # byebug
-        matches = liked_users.select{|user| User.find_by(id: user.id).connections.find_by(email: email).liked == true}
+        matches = liked_users.select{|user|  
+            user_connections = User.find_by(id: user.id).connections
+            # byebug
+            if  user_connections.length > 0
+                user_connections.find_by!(email: email).liked == true
+            else
+                false
+            end
+            }
+            # byebug
         render json: matches, only:[:age,:description, :first_name, :image, :location, :favorite_character, :email], status: 200
     end
 

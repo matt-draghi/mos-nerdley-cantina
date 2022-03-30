@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :messages
   # User
   #CREATE
   post '/signup', to: 'users#create'

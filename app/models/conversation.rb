@@ -1,6 +1,6 @@
 class Conversation < ApplicationRecord
     belongs_to :user
     belongs_to :connection
-    # has_many :messages
+    has_many :messages, dependent: :destroy
 
 end
