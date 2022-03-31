@@ -14,6 +14,7 @@ function NavButtons({setUser, setEmail, setFirstName, setAge, setDescription,  s
             setDescription("")
             setImage("")
             setCharacter("")
+            // Window.location = ('/')
         })
     }
 
@@ -22,7 +23,7 @@ function NavButtons({setUser, setEmail, setFirstName, setAge, setDescription,  s
             <NavLink id="connect-button" to="/connect">Connect</NavLink>
             <NavLink id="converse-button" to="/converse">Converse</NavLink>
             <NavLink id="edit-profile-button" to="/profile">My Account</NavLink>
-            <button onClick={handleLogout}>Logout</button>
+            <NavLink to= "/" onClick={handleLogout}>Logout</NavLink>
         </div>
     )
 

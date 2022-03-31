@@ -122,6 +122,8 @@ function App() {
     }
   }
 
+  const userLoggedIn = user ? "logged-in-container" : "no-user-container" 
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -140,7 +142,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             {sidebar()}
-            <Home user={user} />
+            <Home user={user} userLoggedIn={userLoggedIn}/>
           </Route>
           <Route path="/signup" >
             {allowNewSignup}

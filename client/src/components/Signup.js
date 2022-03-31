@@ -53,7 +53,7 @@ function Signup({password, setPassword, passwordConfirmation, setPasswordConfirm
 
     return(
         <div className="signup-container">
-            <h1>Signup</h1>
+            <h1>Sign Up</h1>
             <form className='signup-form'  onSubmit={createProfile}>
                 <label name="email">Email</label><br/>
                 <input 

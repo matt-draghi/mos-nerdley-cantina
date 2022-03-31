@@ -12,15 +12,13 @@ function Sidebar({user, targetedConvo, setTargetedConvo}){
         .then(response => response.json())
         .then(data => {
             setMatches(data)
-            // console.log("data",data)
-            // console.log("matches",matches)
+
         })
     },[])
 
 
     const {first_name, image} = user
   
-
     return(
         <div className="sidebar-container">
             <div className="card-list">

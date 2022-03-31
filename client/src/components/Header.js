@@ -21,9 +21,7 @@ function Header({user, setUser, setEmail, setFirstName, setAge, setDescription, 
 
     return(
         <div className="header-container">
-            <NavLink className="header-logo" to="/">
-                Cantina
-            </NavLink>
+            <NavLink className="header-logo" to="/">Cantina</NavLink>
             {showNavButtons()}
         </div>
     )

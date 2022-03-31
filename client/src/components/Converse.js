@@ -34,8 +34,9 @@ function Converse({targetedConvo, user}){
             connection_email: targetedConvo.email,
             message: message
         }
+
         //fetch a post request to messages
-        fetch('/message',{
+        fetch('/message-main',{
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
@@ -44,12 +45,25 @@ function Converse({targetedConvo, user}){
         })
         .then(response => response.json())
         .then(message => {
+            console.log(message)
             setConversationMessages(conversationMessages => [...conversationMessages, message])
             setMessage("")
+            fetch('/message-secondary',{
+                method: "POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify(submittedMessage)
+            })
+            .then(response => response.json())
+            .then(message => {
+                console.log(message)
+            })
         })
     }
 
     if (targetedConvo){
+        // debugger
         return(
             <div className="converse-container">
                 <div className="conversation-header">
@@ -61,7 +75,7 @@ function Converse({targetedConvo, user}){
                     <div className="messages-container">
                         {/* Map through messages for conversation and if user.id = message.user_id, it will be blue and on the right*/}
                         {conversationMessages?.map((individualMessage) => {
-                            console.log(individualMessage)
+                            // console.log(individualMessage)
                             return (<MessageBubble key={individualMessage.id} user={user} message={individualMessage}/>)
                         })}
                     </div>

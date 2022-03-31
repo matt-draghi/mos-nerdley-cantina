@@ -1,20 +1,21 @@
-.home-container{
+.no-user-container{
     display: flex;
     height: 100%;
     align-items: center;
     flex-direction: column;
-    margin-left: 20%;
 }
 
-.home-container img{
+.no-user-container img{
     width: auto;
     height: 50%;
     margin-bottom: 5%;
 }
 
-.home-container h3{
-    text-align: center;
+.no-user-container h3{
+    text-align: center;;
 }
+
+
 
 .home-user-buttons{
     display: flex;
@@ -34,3 +35,36 @@
 .home-user-buttons a::after{
     text-decoration: none;
 }
+
+/* ######### LOGGED IN ######## */
+.logged-in-container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 17%;
+}
+
+.logged-in-container a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.logged-in-container a {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #3bc293;
+    outline: none;
+    transition: 1s ease-in-out;
+  }
+  
+.logged-in-container a:hover {
+    transition: 1s ease-in-out;
+    background: #3bc293;
+  }

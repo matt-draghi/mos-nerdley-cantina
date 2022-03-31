@@ -1,6 +1,6 @@
 .sidebar-container{
     position: fixed;
-    background-color: white;
+    background-color: #06355b;
     height: 100%;
     width: 17%;
     top: 50px;
@@ -12,15 +12,13 @@
 
 .user-card{
     display: flex;
-    border-top: groove grey;
-    border-bottom: groove grey;
     text-align: center;
+    color: white;
 }
 
 .user-card img{
     height: 50px;
     width: 50px;
-    /* transform:  */
     border-radius: 90px;
     margin-right: 10px;
     margin-left: 5px;
@@ -32,14 +30,13 @@
 }
 
 .match-card{
-    border-top: groove thick grey;
-    border-bottom: groove thick grey;
+    border: groove #3bc293;
+    background-color: white;
 }
 
 .match-card img{
     height: 50px;
     width: 50px;
-    /* transform:  */
     border-radius: 90px;
     margin-right: 10px;
     margin-left: 5px;
@@ -47,8 +44,12 @@
 }
 
 #buffer{
-    /* height: 10px */
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    border: solid #3bc293;
 }
 
 .card-message{
@@ -60,4 +61,5 @@
 .sidebar-container a{
     text-decoration: none;
     color: black;
+    background-color: white;
 }

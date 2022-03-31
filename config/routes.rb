@@ -31,11 +31,13 @@ Rails.application.routes.draw do
   #create conversations when two users like are each others connections - will need to run a check when the like button is hit
   get '/conversation', to: "conversations#index"
   get '/conversation/:email', to: "conversations#show"
-  post '/conversation/', to: "conversations#create"
+  post '/conversation-main', to: "conversations#create"
+  post '/conversation-secondary', to: "conversations#create_second"
 
   #Messages
   #Allow users to click on a conversation in the sidebar to show messages
-  post '/message', to: "messages#create"
+  post '/message-main', to: "messages#create"
+  post '/message-secondary', to: "messages#create_second"
   get '/message/:connection_id', to: "messages#show"
 
   #HTML

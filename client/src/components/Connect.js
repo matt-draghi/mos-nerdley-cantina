@@ -5,7 +5,7 @@ import '../styles/Connect.css'
 function Connect(){
 
     const [possibleConnections, setPossibleConnections] = useState([])
-    
+
     useEffect(()=>{
         fetch('/users')
         .then(response => response.json())
@@ -34,7 +34,7 @@ function Connect(){
     }
 
     const createConversation = (connectionInfo) => {
-        fetch('/conversation',{
+        fetch('/conversation-main',{
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
@@ -42,7 +42,19 @@ function Connect(){
             body: JSON.stringify(connectionInfo)
         })
         .then(response => response.json())
-        .then(converastion => console.log(converastion))
+        .then(converastion => {
+            fetch('/conversation-secondary',{
+                method: "POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify(connectionInfo)
+            })
+            .then(response => response.json())
+            .then(converastion => console.log(converastion))
+        })
+
+        
     }
 
     const userIndex = Math.floor(Math.random() * possibleConnections?.length)
