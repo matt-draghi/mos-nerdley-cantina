@@ -21,6 +21,7 @@ function Home ({user, userLoggedIn}) {
                     <br/>
                     Sign up today to join the Cantina!
                 </h3>
+                <br/>
                 <div className="home-user-buttons">
                     <NavLink to="/login">Login</NavLink>
                     <NavLink to="/signup">Sign Up</NavLink>
