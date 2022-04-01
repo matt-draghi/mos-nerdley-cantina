@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hosted link: https://mos-nerdley-cantina.herokuapp.com/
+Users already exist, so sign up and look to connect and converse with the users below 
 
-Things you may want to cover:
 
-* Ruby version
+Test Users:
 
-* System dependencies
+  Email.        Password.     FirstName
+test@test.com       test.        Susan
+test2@test.com      test.         John
 
-* Configuration
+- If desired, please deleted your account when finished demoing.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enjoy!
