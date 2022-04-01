@@ -25,12 +25,12 @@ function App() {
   const [image, setImage] = useState("")
   const [character, setCharacter] = useState("")
   const [targetedConvo, setTargetedConvo] = useState()
-  // const [conversationMessages, setConversationMessages] = useState([])
+  const [latestConversation, setLatestConversation ] = useState([])
+
   
   useEffect(()=>{
     fetch('/me')
       .then(resp => {
-        // console.log(resp)
         if(resp.ok){
           resp.json().then((user) => {
             setUser(user)
@@ -42,8 +42,7 @@ function App() {
             setCharacter(user.favorite_character)
           })
         }
-        // console.log("The fetch for user info is happening")
-        // console.log(user)
+
       })
   },[])
 
@@ -94,6 +93,7 @@ function App() {
           user={user} 
           targetedConvo={targetedConvo} 
           setTargetedConvo={setTargetedConvo}
+          latestConversation={latestConversation}
         />
       )}
     else{
@@ -162,7 +162,7 @@ function App() {
           <Route path='/connect'>
             {sidebar()}
             <FadeIn>
-              <Connect />
+              <Connect latestConversation={latestConversation} setLatestConversation={setLatestConversation}/>
             </FadeIn>
           </Route>
           <Route path='/converse'>

@@ -14,11 +14,20 @@ class ConnectionsController < ApplicationController
             user_connections = User.find_by(id: user.id).connections
             # byebug
             if  user_connections.length > 0
-                user_connections.find_by!(email: email).liked == true
+                connection_to_check = user_connections.find_by(email: email)
+                if connection_to_check == nil
+                    false
+                else
+                    connection_to_check.liked == true
+                end
             else
                 false
             end
             }
+            # byebug
+        if matches == nil
+            matches = []
+        end
             # byebug
         render json: matches, only:[:id, :age,:description, :first_name, :image, :location, :favorite_character, :email], status: 200
     end

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ConnectCards from "./ConnectCards"
 import '../styles/Connect.css'
 
-function Connect(){
+function Connect({setLatestConversation}){
 
     const [possibleConnections, setPossibleConnections] = useState([])
 
@@ -29,8 +29,6 @@ function Connect(){
         // then remove liked user from possible connections
         const updatedPossibleConnections = possibleConnections.filter(possibleConnection => possibleConnection.email !== newConnection.email)
         setPossibleConnections(updatedPossibleConnections)
-    
-        console.log(possibleConnections)
     }
 
     const createConversation = (connectionInfo) => {
@@ -51,7 +49,7 @@ function Connect(){
                 body: JSON.stringify(connectionInfo)
             })
             .then(response => response.json())
-            .then(converastion => console.log(converastion))
+            .then(conversation => setLatestConversation(conversation))
         })
 
         

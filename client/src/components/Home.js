@@ -1,5 +1,6 @@
 import { NavLink, Link } from "react-router-dom"
 import '../styles/Home.css'
+import picture from "../assets/view preview.png"
 
 
 function Home ({user, userLoggedIn}) {
@@ -15,7 +16,7 @@ function Home ({user, userLoggedIn}) {
     else{
         return(
             <div className={userLoggedIn} >
-                <img alt="Placholder" title="Placeholder" src="https://www.sketchappsources.com/resources/source-image/direct-message-johnnythedesigner.png"/>
+                <img alt="Placholder" title="Placeholder" src={picture}/>
                 <h3>
                     Mos Nerdley Cantina is a great place to meet new nerds like you.
                     <br/>

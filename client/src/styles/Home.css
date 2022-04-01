@@ -6,9 +6,12 @@
 }
 
 .no-user-container img{
-    width: auto;
+    width: 50%;
     height: 50%;
     margin-bottom: 5%;
+    border: solid thick white;
+    border-radius: 25px;
+    box-shadow: 5px 5px black;
 }
 
 .no-user-container h3{
@@ -58,15 +61,6 @@
     justify-content: space-evenly
 }
 
-/* .home-user-buttons a{
-    margin-bottom: 15%;
-    background-color: white;
-    color: black;
-    text-align: center;
-    padding: 5px;
-    text-decoration: none;
-    border:outset
-} */
   .home-user-buttons a{
     color: #FFF;
     transition: all 0.5s;

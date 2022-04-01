@@ -23,10 +23,8 @@
 .conversation-frame{
     width: 75%;
     height: 90%;
-    border: solid;
     display: flex;
     flex-direction: column;
-    border: solid #3bc293
 }
 
 .messages-container{
@@ -51,7 +49,7 @@
 }
 
 .connection-message{
-    border: solid thin;
+    border: solid thin ;
     border-radius: 10px;
     background-color: grey;
     width: 45%;
@@ -68,9 +66,10 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    outline: solid;
+    outline: solid thin #06355b;
     height: 7%;
     align-items: center;
+    background-color: #06355b;
 }
 
 
