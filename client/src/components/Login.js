@@ -26,12 +26,10 @@ function Login(){
         .then(resp => resp.json())
         .then(renderResponse => {
             if(renderResponse["errors"]){
-                debugger
                 alert(renderResponse["errors"])
             }
             else{
                 window.location = ('/')
-                console.log(renderResponse)
             }       
          })
     }

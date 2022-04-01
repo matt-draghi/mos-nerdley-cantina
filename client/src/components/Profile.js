@@ -35,7 +35,6 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
             }
             else{
                setEditProfile(false)
-            //    debugger
             }
         })
     }
@@ -60,9 +59,20 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
         setModalShow(false)
     }
 
+    const deleteUserAsConnection = (userEmail) => {
+        fetch(`/connection/${userEmail}`,{
+            method: "DELETE"
+        })
+        .then(resp => resp.json())
+        .then(()=>{
+            setUser(null)
+            window.location = ('/')
+        })
+    }
+
+
     const deleteProfile = (e) => {
         e.preventDefault()
-        console.log("Profile Deleted", password)
         // Fetch to delete here
         fetch(`/users/${user.id}`,{
             method: "DELETE",
@@ -75,18 +85,13 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
         })
         .then(resp => resp.json())
         .then(renderResponse => {
-            // console.log(renderResponse)
             if(renderResponse["errors"]){
                 alert(renderResponse["errors"])
             }
             else{
-                setUser(null)
-                window.location = ('/')
-                
+                deleteUserAsConnection(user.email)                
             }
         })
-        //take you back to home and set user to null
-        // closeModal()
     }
 
     const handlePasswordInput = (e) => {

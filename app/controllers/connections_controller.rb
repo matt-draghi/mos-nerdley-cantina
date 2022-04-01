@@ -9,10 +9,8 @@ class ConnectionsController < ApplicationController
         connection_emails = connections.pluck(:email)
         liked_users = User.all.select{|user| connection_emails.include?(user.email)}
         #create an array of users where you liked the user and they liked you
-        # byebug
         matches = liked_users.select{|user|  
             user_connections = User.find_by(id: user.id).connections
-            # byebug
             if  user_connections.length > 0
                 connection_to_check = user_connections.find_by(email: email)
                 if connection_to_check == nil
@@ -24,28 +22,27 @@ class ConnectionsController < ApplicationController
                 false
             end
             }
-            # byebug
         if matches == nil
             matches = []
         end
-            # byebug
         render json: matches, only:[:id, :age,:description, :first_name, :image, :location, :favorite_character, :email], status: 200
     end
-
-    # def show
-    #     connection = Connection.find_by(email: params[:email])
-    # end
 
     def create
         connection = Connection.new(connection_params)
         connection.user_id = session[:user_id]
-        # debugger
         if connection.valid?
             connection.save
             render json: connection, status: 201
         else
             render json: {errors: user.errors.full_messages}, status: 422
         end
+    end
+
+    def destroy
+        connections = Connection.all.select{|connection| connection.email == params[:email]+"."+params[:format]}
+        connections.each(&:destroy)
+        render json: {}, status: 200
     end
 
     private

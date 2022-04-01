@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
             render json: user
         else
             # session[:password_attempts] = (session[:password_attempts] || 0) + 1
-            # TODO: implement account lockout functionality based on the above session
+            # STRETCH TODO: implement account lockout functionality based on the above session
             render json: {errors: "Password not valid. Please try again."}
         end
     end

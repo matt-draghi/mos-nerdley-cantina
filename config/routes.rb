@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   #Connections
   post '/connection', to: "connections#create"
   get '/connection', to: "connections#index"
+  delete '/connection/:email', to: "connections#destroy"
   # get '/connection/:id', to: "connections#show"
 
 

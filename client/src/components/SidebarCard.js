@@ -5,7 +5,6 @@ function SidebarCard({match, setTargetedConvo}){
     const {first_name, image, description} = match
 
     const openConversation = () =>{
-        console.log(match)
         setTargetedConvo(match)
     }
 
@@ -19,11 +18,6 @@ function SidebarCard({match, setTargetedConvo}){
                 
                 <div className="card-message">
                     <p>About: {description}</p>
-                    {/* If no messages exist, prompt "Click here
-                    to start a convo"
-                        if they do this, then create a conversation with
-                        the id and connection id for both users;
-                    */}
                 </div>
             </div>
         </NavLink>

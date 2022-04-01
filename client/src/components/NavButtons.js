@@ -14,7 +14,6 @@ function NavButtons({setUser, setEmail, setFirstName, setAge, setDescription,  s
             setDescription("")
             setImage("")
             setCharacter("")
-            // Window.location = ('/')
         })
     }
 

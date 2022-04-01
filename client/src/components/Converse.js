@@ -3,11 +3,8 @@ import {useEffect, useState} from 'react'
 import MessageBubble from "./MessageBubble"
 
 function Converse({targetedConvo, user}){
-    // console.log("This is the targeted user", targetedConvo)
-
     const [message, setMessage] = useState("")
     const [conversationMessages, setConversationMessages] = useState([])
-    // const [displayedMessages, setDisplayedMessages] = useState()
 
     useEffect(()=>{
         // Use this to get the messages from the conversation
@@ -15,8 +12,6 @@ function Converse({targetedConvo, user}){
             fetch(`/message/${targetedConvo.id}`)
             .then(response => response.json())
             .then(messages => {
-                // const existingMessages = messages.map((message) => {return message.message})
-                // console.log(existingMessages)
                 setConversationMessages(messages)
             })
         }
@@ -45,7 +40,6 @@ function Converse({targetedConvo, user}){
         })
         .then(response => response.json())
         .then(message => {
-            console.log(message)
             setConversationMessages(conversationMessages => [...conversationMessages, message])
             setMessage("")
             fetch('/message-secondary',{
@@ -63,7 +57,6 @@ function Converse({targetedConvo, user}){
     }
 
     if (targetedConvo){
-        // debugger
         return(
             <div className="converse-container">
                 <div className="conversation-header">
@@ -75,7 +68,6 @@ function Converse({targetedConvo, user}){
                     <div className="messages-container">
                         {/* Map through messages for conversation and if user.id = message.user_id, it will be blue and on the right*/}
                         {conversationMessages?.map((individualMessage) => {
-                            // console.log(individualMessage)
                             return (<MessageBubble key={individualMessage.id} user={user} message={individualMessage}/>)
                         })}
                     </div>
