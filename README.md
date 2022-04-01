@@ -10,6 +10,6 @@ Test Users:
 - Email: test2@test.com   |   Password: test  |   First Name:  John
 
 
-If desired, please deleted your account when finished demoing.
+If desired, please delete your account when finished demoing.
 
 Enjoy!
