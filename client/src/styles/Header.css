@@ -9,22 +9,23 @@
 
 /* TODO: Make this an image or something maybe? */
 .header-logo{
-    height: 80%;
-    margin-top: 5px;
-    width: 5%;
+    height: 95%;
+    /* margin-top: 5px; */
+    width: 3%;
     text-align: center;
     z-index: 1;
-    font-size: 1.2rem;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 1.5rem;
+    padding-left: 7%;
+    padding-right: 7%;
     display: flex;
     align-items: center;
-    margin-left: 6%;
-    margin-right: 6%;
+    /* margin-left: 6%; */
+    /* margin-right: 6%; */
     text-decoration: none;
-    background-color: #06355b;
-    color: #3bc293;
-    border-radius: 10px;
+    background-color: #04615a;
+    color: white;
+    border-bottom:solid #3bc293;
+    /* border-radius: 5px; */
 } 
 
 .nav-buttons{

@@ -4,16 +4,14 @@
     height: 100%;
     width: 17%;
     top: 50px;
-}
-
-.card-list{
-    margin-top: 50px;
+    border-right: solid #3bc293
 }
 
 .user-card{
     display: flex;
     text-align: center;
     color: white;
+    border-bottom: solid #3bc293;
 }
 
 .user-card img{
@@ -30,7 +28,7 @@
 }
 
 .match-card{
-    border: groove #3bc293;
+    border: groove #04615a;
     background-color: white;
 }
 
@@ -49,7 +47,7 @@
     justify-content: center;
     align-items: center;
     height: 80px;
-    border: solid #3bc293;
+    border-bottom: solid #04615a;
 }
 
 .card-message{

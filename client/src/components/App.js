@@ -10,6 +10,7 @@ import Sidebar from "./Sidebar";
 import Connect from "./Connect";
 import Profile from "./Profile";
 import Converse from "./Converse";
+import FadeIn from "react-fade-in/lib/FadeIn";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -24,6 +25,7 @@ function App() {
   const [image, setImage] = useState("")
   const [character, setCharacter] = useState("")
   const [targetedConvo, setTargetedConvo] = useState()
+  // const [conversationMessages, setConversationMessages] = useState([])
   
   useEffect(()=>{
     fetch('/me')
@@ -87,8 +89,13 @@ function App() {
 
   const sidebar = () => {
     if(user){
-      return <Sidebar user={user} targetedConvo={targetedConvo} setTargetedConvo={setTargetedConvo}/>
-    }
+      return( 
+        <Sidebar 
+          user={user} 
+          targetedConvo={targetedConvo} 
+          setTargetedConvo={setTargetedConvo}
+        />
+      )}
     else{
       return null
     }
@@ -142,7 +149,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             {sidebar()}
-            <Home user={user} userLoggedIn={userLoggedIn}/>
+            <FadeIn>
+              <Home user={user} userLoggedIn={userLoggedIn}/>
+            </FadeIn>
           </Route>
           <Route path="/signup" >
             {allowNewSignup}
@@ -151,14 +160,20 @@ function App() {
             {allowNewLogin}
           </Route>
           <Route path='/connect'>
-            <Connect />
+            {sidebar()}
+            <FadeIn>
+              <Connect />
+            </FadeIn>
           </Route>
           <Route path='/converse'>
             {sidebar()}
             <Converse targetedConvo={targetedConvo} user={user}/>
           </Route>
           <Route path='/profile'>
-            {editProfile()}
+            {sidebar()}
+            <FadeIn>
+              {editProfile()}
+            </FadeIn>
           </Route>
         </Switch>
       </div>

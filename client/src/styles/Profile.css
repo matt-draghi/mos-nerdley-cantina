@@ -1,16 +1,54 @@
 .edit-profile-container{
     display: flex;
     flex-direction: column;
-    margin-left: 20%
+    margin-left: 20%;
+    border: solid;
+    padding-left: 15%;
+    margin-right: 3%;
+}
+
+/* .user-info{
+    padding-left: 15%;
+} */
+
+.edit-profile-container h1{
+    padding-left: 30%;
+}
+
+.edit-profile-container p{
+    margin-left: 15%;
+    width: 25%
 }
 
 .profile-buttons{
     display: flex;
     justify-content: space-between;
-    margin-right: 20%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+}
+
+.edit-profile-container h3{
+    padding-left: 15%;
+}
+
+.edit-profile-form input[type="text"]{
+    margin-left: 15%;
+    width: 25%
+}
+
+.edit-profile-form input[type="email"]{
+    margin-left: 15%;
+    width: 25%
+}
+
+.edit-profile-form select{
+    margin-left: 15%;
+    width: 25%
 }
 
 .modal{
+    margin-top: 8%;
+    margin-right: 25%;
     padding: 1em;
     max-width: 50ch;
     align-self: center;
@@ -24,7 +62,6 @@
 .delete-form{
     width: 50%;
 }
-
 
 .delete-form input[type="submit"]{
     margin-top: 10%;

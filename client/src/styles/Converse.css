@@ -53,7 +53,7 @@
 .connection-message{
     border: solid thin;
     border-radius: 10px;
-    background-color: #3bc293;
+    background-color: grey;
     width: 45%;
     align-self: flex-start;
     margin-bottom: 10px;

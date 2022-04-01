@@ -1,5 +1,6 @@
 import '../styles/Login.css'
 import {useState} from 'react'
+import FadeIn from 'react-fade-in/lib/FadeIn'
 
 function Login(){
     const [email, setEmail] = useState("")
@@ -36,35 +37,37 @@ function Login(){
     }
 
     return(
-        <div className="login-container">
-            <h1>Login</h1>
-            <form className='login-form' onSubmit={handleLogin}>
+        <FadeIn>
+            <div className="login-container">
+                <h1>Login</h1>
+                <form className='login-form' onSubmit={handleLogin}>
 
-            <label name="email">Email</label><br/>
-                <input 
-                    type="email" 
-                    name="email" 
-                    value={email}
-                    onChange={(e)=>setEmail(e.target.value)}
-                />
+                <label name="email">Email</label><br/>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        value={email}
+                        onChange={(e)=>setEmail(e.target.value)}
+                    />
 
-                <br/>
-                <br/>
+                    <br/>
+                    <br/>
 
-                <label name="password">Password</label><br/>
-                <input 
-                    type={showPass? "text" : "password"} 
-                    name="password" value={password}
-                    onChange={(e)=>setPassword(e.target.value)}
-                />
-                <button type="button" onClick={toggleShowPass}>{showPass ? "Hide Password" : "Show Password"}</button>
-                
-                <br/>
-                <br/>
+                    <label name="password">Password</label><br/>
+                    <input 
+                        type={showPass? "text" : "password"} 
+                        name="password" value={password}
+                        onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <button type="button" onClick={toggleShowPass}>{showPass ? "Hide Password" : "Show Password"}</button>
+                    
+                    <br/>
+                    <br/>
 
-                <input type="submit" className='form-button' value="Login"/>
-            </form>
-        </div>
+                    <button type="submit" className='form-button' value="Login">Login</button>
+                </form>
+            </div>
+        </FadeIn>
     )
 }
 

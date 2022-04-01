@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 function SidebarCard({match, setTargetedConvo}){
 
-    const {first_name, image} = match
+    const {first_name, image, description} = match
 
     const openConversation = () =>{
         console.log(match)
@@ -18,7 +18,7 @@ function SidebarCard({match, setTargetedConvo}){
                 </div>
                 
                 <div className="card-message">
-                    <p>This is where the message will display...</p>
+                    <p>About: {description}</p>
                     {/* If no messages exist, prompt "Click here
                     to start a convo"
                         if they do this, then create a conversation with

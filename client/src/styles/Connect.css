@@ -1,4 +1,5 @@
 .connect-container{
+    margin-left: 17.5%;
     display: flex;
     justify-content: center;
     height: 70%;
@@ -6,12 +7,14 @@
 
 .connect-card{
     margin-top: 3%;
+    width: 35%;
     outline: solid;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #06355b;
+    box-shadow: 10px 10px 5px black;
 }
 
 .card-image{

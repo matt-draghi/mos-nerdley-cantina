@@ -1,5 +1,7 @@
 
-import { AiOutlineDislike, AiOutlineLike, AiTwotoneDislike, AiTwotoneLike } from "react-icons/ai";
+import {AiTwotoneDislike, AiTwotoneLike } from "react-icons/ai";
+import FadeIn from 'react-fade-in';
+
 
 function ConnectCards({displayedUser, handleConnection}){
     const {first_name, email, location, age, favorite_character, description, image} = displayedUser
@@ -25,6 +27,7 @@ function ConnectCards({displayedUser, handleConnection}){
     }
     
     return(
+        <FadeIn>
         <div className="connect-card">
             <div className="card-image">
                 <img src={image} alt={first_name}/>
@@ -45,6 +48,7 @@ function ConnectCards({displayedUser, handleConnection}){
                 <p id="favorite-character">My favorite fictional character is {favorite_character}!</p>
             </div>
         </div>
+        </FadeIn>
     )
 
 }

@@ -35,7 +35,7 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
             }
             else{
                setEditProfile(false)
-               debugger
+            //    debugger
             }
         })
     }
@@ -75,7 +75,7 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
         })
         .then(resp => resp.json())
         .then(renderResponse => {
-            console.log(renderResponse)
+            // console.log(renderResponse)
             if(renderResponse["errors"]){
                 alert(renderResponse["errors"])
             }
@@ -150,7 +150,7 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
                     <br/>
                     <br/>
                     <div className='profile-buttons'>
-                        <input type="submit" className='form-button' value="Save Changes"/> 
+                        <button type="submit" >Save Changes</button> 
                         <button onClick={cancelChanges}>Cancel</button>
                     </div>
                 </form>
@@ -161,6 +161,7 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
         return(
             <div className="edit-profile-container">
                 <h1>{firstName}'s Profile</h1>
+                <div className='user-info'>
                     <h3>Email</h3>
                         <p>{email}</p>
                     <h3>First Name</h3>
@@ -173,6 +174,7 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
                         <p>{image}</p>    
                     <h3>Favorite Character</h3>
                         <p>{character}</p>
+                </div>
                 <br/>
                 <div className='profile-buttons'>
                     <button onClick={() => setEditProfile(true)}>Edit Profile</button>
