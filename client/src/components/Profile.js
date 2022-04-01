@@ -108,7 +108,7 @@ function Profile({password, setPassword, user, setUser, email, setEmail, firstNa
                         type="email" 
                         name="email" 
                         value={email}
-                        onChange={(e)=>setEmail(e.target.value)}
+                        // onChange={(e)=>setEmail(e.target.value)}
                     />
                     <h3>First Name</h3>
                     <input 
