@@ -6,10 +6,10 @@ Users already exist, so sign up and look to connect and converse with the users 
 
 Test Users:
 
-  Email.        Password.     FirstName
-test@test.com       test.        Susan
-test2@test.com      test.         John
+- Email: test@test.com      Password: test     First Name:  Susan
+- Email: test2@test.com      Password: test     First Name:  John
 
-- If desired, please deleted your account when finished demoing.
+
+If desired, please deleted your account when finished demoing.
 
 Enjoy!
